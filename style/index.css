@@ -1,0 +1,91 @@
+#addbutton{
+    border-radius: 50px;
+    margin-left: 20px;
+}
+
+#element{
+ padding: 10px;
+ display: flex;
+ flex-direction: row;
+}
+
+#fields,#attributes{
+    width: 150px;
+}
+
+.container{
+    position: absolute;
+    margin: 5% 5% 5% 5%;
+    height: 90%;
+    padding: 0;
+}
+.tab-content{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-top: none;
+}
+.tab-pane{
+    height: 100%;
+    width: 100%;
+}
+.form-control {
+    display: unset;
+    width: 400px;
+    margin-left: 20px;
+  }
+
+.search-div, .element-div {
+  padding: 15px;
+  padding-bottom: 0px;
+}
+.search {
+    margin-left: 20px;
+    margin-bottom: 3px;
+}
+.dropdown{
+    width:150px;
+}
+#elements {
+    min-height: 70%;
+    display: none;
+}
+
+#save-div, #load-div {
+    width: 80%;
+    padding-top: 25px;
+    display: none;
+}
+.panels{
+    overflow-y: auto;
+    padding: 20px;
+}
+#radioNumber{
+    width:50px;
+    margin-left: 20px;
+    display: none;
+}
+#radioLabels{
+    display: none;
+}
+#radioLabel{
+    margin-left: 47.5%;
+    width: 225px;
+    margin-bottom:5px;
+}
+#elementRow{
+    display: none;
+}
+#version{
+    width:70px;
+    margin-left: 15px;
+}
+#versionLabel{
+   margin-left: 15px;
+}
+#formular-data{
+    margin-top :50px;
+}
+#formular-names{
+    margin-left: 30px;
+}

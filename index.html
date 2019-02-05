@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Including scripts -->
+  <script src="./scripts/administration.js"></script>
+  <script src="./scripts/formular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Including css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style/index.css" type="text/css">
+</head>
+
+<body onload="createDb()">
+  <div class="container">
+    <!-- Tabs -->
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#admin">Administration</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#formular" onclick="getFormularNames()">Formular</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <!--Administration tab -->
+      <div id="admin" class="tab-pane fade in active panels">
+        <div class="search-div">
+          <!-- Search form -->
+          <form action="#" onsubmit="search();return false">
+            Formular name:
+            <input type="text" id="filter" class="form-control" required />
+            <button class="btn btn-primary search" type="submit" onclick="validation()">Search</button>
+          </form>
+        </div>
+        <!-- Default hidden element for cloning -->
+        <div id="elementRow">
+          <div id="element">
+            <span id="elementName">Element 1</span>
+            <input id="label" class="form-control">
+            <select id="fields" class="form-control" onchange="onChangeField(this)"></select>
+            <input type="number" class="form-control" id="radioNumber" value="1" min="1" onKeyDown="return false" oninput="displayRadioLabels(this)">
+            <select id="attributes" class="form-control" onchange="onChangeAttribute(this)"></select>
+            <button class="btn btn-primary " id="addbutton" onclick="displayElement()">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </div>
+          <div id="radioLabels">
+            <input type="text" class="form-control" id="radioLabel">
+          </div>
+        </div>
+        <!-- Administration save form -->
+        <form action="#" onsubmit="save();return false" method="POST">
+          <div id="elements" class="element-div"></div>
+          <div id="save-div">
+            <button class="btn btn-primary pull-right" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+      <!--Formular tab -->
+      <div id="formular" class="tab-pane fade panels">
+        <!-- Load formular -->
+        <div class="search-div">
+          Formular name:
+          <select id="formular-names" class="form-control"></select>
+          <span id="versionLabel">Version </span>
+          <input class="form-control" type="number" id="version" value="1" min="1" onKeyDown="return false">
+          <button class="btn btn-primary search" id="load" onclick="load()">Load</button>
+        </div>
+        <!-- Formular save form -->
+        <form action="#" onsubmit="saveData();return false" method="POST">
+          <div id="formular-data"></div>
+          <div id="load-div">
+            <button class="btn btn-primary pull-right">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
